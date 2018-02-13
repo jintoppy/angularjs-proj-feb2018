@@ -9,6 +9,8 @@
 <body>
     
     <div ng-controller="MyCtrl">
+            
+
             <div>{{name | lowercase }}</div>
             <div>{{name | uppercase }}</div>
             <div>{{name}}</div>
@@ -43,11 +45,10 @@
             </tbody>
         </table>
 
-        <div ng-show="selectedStudent">
-            <h2>Student Details</h2>
-            <p>Name: {{selectedStudent.name}}</p>
-            <p>Age: {{selectedStudent.age}}</p>
-        </div>
+        <student-details 
+                current-student="selectedStudent" 
+                my-title="Student Details">
+        </student-details>
 
         <button ng-click="onBtnClick($event)">Button1</button>
         <button ng-click="onAnotherBtnClick($event)">Button3</button>
