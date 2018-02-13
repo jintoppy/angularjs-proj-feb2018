@@ -7,7 +7,51 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div ng-controller="MyCtrl">
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Seniority</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="stu in students">
+                    <td>
+                        {{stu.name}}
+                    </td>
+                    <td>
+                        {{stu.age}}
+                    </td>
+                    <td>
+                        {{stu.seniority}}
+                    </td>
+                    <td>
+                        <button ng-click="onViewBtnClick(stu)">
+                            View Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div ng-show="selectedStudent">
+            <h2>Student Details</h2>
+            <p>Name: {{selectedStudent.name}}</p>
+            <p>Age: {{selectedStudent.age}}</p>
+        </div>
+
+        <button ng-click="onBtnClick($event)">Button1</button>
+        <button ng-click="onBtnClick($event)">Button3</button>
+
+    </div>
+
     <script src="angular.js"></script>
     <script src="app.js"></script>
+    <script src="app.service.js"></script>
 </body>
 </html>
