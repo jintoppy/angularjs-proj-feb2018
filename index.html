@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-
+    
     <div ng-controller="MyCtrl">
-        
+            <div>{{name | lowercase }}</div>
+            <div>{{name | uppercase }}</div>
+            <div>{{name}}</div>
+            <div>{{mydate | date}}</div>
+             <div> {{ 100 | currency:'INR' }}</div>   
         <table>
             <thead>
                 <tr>
@@ -22,7 +26,7 @@
             <tbody>
                 <tr ng-repeat="stu in students">
                     <td>
-                        {{stu.name}}
+                        {{stu.name | customName:'hello'}}
                     </td>
                     <td>
                         {{stu.age}}
@@ -46,12 +50,14 @@
         </div>
 
         <button ng-click="onBtnClick($event)">Button1</button>
-        <button ng-click="onBtnClick($event)">Button3</button>
+        <button ng-click="onAnotherBtnClick($event)">Button3</button>
 
     </div>
 
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="app.service.js"></script>
+    <script src="app.filter.js"></script>
+    <script src="app.component.js"></script>
 </body>
 </html>
