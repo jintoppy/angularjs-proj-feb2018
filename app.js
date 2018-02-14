@@ -1,4 +1,27 @@
-var myapp = angular.module('myapp', []);
+var myapp = angular.module('myapp', ['ui.router']);
+
+myapp.config(['$stateProvider','$urlRouterProvider',
+ function($stateProvider, $urlRouterProvider){
+
+    $stateProvider.state({
+        name: 'home',
+        url: '/home',
+        component: 'homePage'
+    });
+
+    $stateProvider.state({
+        name: 'about',
+        url: '/about',
+        component: 'aboutPage'
+    });
+
+    $urlRouterProvider.otherwise('/home');
+
+}]);
+
+
+
+
 
 myapp.controller('MyCtrl', ['$scope', 'AppService', 
 function($scope, AppService){
